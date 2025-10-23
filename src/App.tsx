@@ -1,11 +1,8 @@
 import "./App.css";
+import AppRouter from "./routes/Router";
 
 function App() {
-  return (
-    <>
-      <img src="src\assets\piyocarreer.png" alt="ひよこ" />
-    </>
-  );
+  return <AppRouter />;
 }
 
 export default App;
