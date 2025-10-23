@@ -1,5 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 function Home() {
-  return <h1>ホーム画面です！</h1>;
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <h1>
+        <button onClick={() => navigate("/analysis-company")}>企業分析</button>
+      </h1>
+    </>
+  );
 }
 
 export default Home;
