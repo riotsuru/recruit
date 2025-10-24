@@ -1,7 +1,20 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+
 export const AnalysisCompany = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const onClose = () => {
+    setIsOpen(false);
+  };
   return (
     <div>
       <h1 style={{ textAlign: "center", marginTop: "10vh" }}>企業分析</h1>
+      <button onClick={handleModal}>+</button>
+      <Modal isOpen={isOpen} onClose={onClose} />
       <div
         className="grid-container"
         style={{
