@@ -3,6 +3,14 @@ import { ModalContents } from "./ModalContents";
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  onSubmit: (data: FormDataType) => void;
+};
+
+export type FormDataType = {
+  companyName: string;
+  remote: string;
+  income: string;
+  rating: string;
 };
 
 export const Modal = (props: ModalProps) => {
@@ -33,7 +41,7 @@ export const Modal = (props: ModalProps) => {
           textAlign: "center",
         }}
       >
-        <ModalContents onClose={props.onClose} />
+        <ModalContents onClose={props.onClose} onSubmit={props.onSubmit} />
       </div>
     </div>
   );
