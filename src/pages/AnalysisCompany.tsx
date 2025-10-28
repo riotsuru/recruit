@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal } from "./Modal";
+import { Modal } from "../Utils/Modal";
 
 export const AnalysisCompany = () => {
   const [isOpen, setIsOpen] = useState(false);

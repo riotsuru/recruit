@@ -1,3 +1,5 @@
+import { ModalContents } from "./ModalContents";
+
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -18,16 +20,20 @@ export const Modal = (props: ModalProps) => {
         justifyContent: "center",
         alignItems: "center",
       }}
-      onClick={props.onClose}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) props.onClose();
+      }}
     >
       <div
         style={{
           backgroundColor: "white",
           padding: "20px",
           borderRadius: "8px",
+          minWidth: "300px",
+          textAlign: "center",
         }}
       >
-        modalContent
+        <ModalContents onClose={props.onClose} />
       </div>
     </div>
   );
